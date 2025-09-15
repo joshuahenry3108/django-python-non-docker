@@ -9,15 +9,15 @@ revolte:
         rid_1:
           type: WEB_SERVICE
           name: web_service
-          entryPoint: index.js
+          entryPoint: wsgi.py
           properties:
             health: /health
             port: 8080
             variables:
               BASE_URL: /api/v1
-              DATABASE_URL: '#{db.dbUrl}'
-              DATABASE_PORT: '#{db.dbPort}'
-              DATABASE_USERNAME: '#{db.dbUsername}'
+              DATABASE_HOST: '#{db.dbUrl}'
+              DB_PORT: '#{db.dbPort}'
+              DATABASE_USER: '#{db.dbUsername}'
               DATABASE_PASSWORD: '#{db.dbPassword}'
               DATABASE_NAME: '#{db.dbName}'
           specifications:
