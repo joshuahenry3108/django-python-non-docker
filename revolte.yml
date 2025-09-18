@@ -1,10 +1,21 @@
 revolte:
   version: '1.0'
-  project: Codebyte
-  appName: appdocker
+  project: ABC proj
+  appName: dsfdsf
+  config:
+    codeReview:
+      summarize: true
+      suggestFixes: false
+      commentStyle: Balanced
+    codeQuality:
+      codeStyle:
+        rules:
+          abstractClassInstantiated: 'on'
   env:
     staging:
       branch: qa
+      codeReview: true
+      codeQuality: true
       services:
         rid_1:
           type: WEB_SERVICE
@@ -33,7 +44,9 @@ revolte:
             storage: 30
             engine: postgres
     qa:
-      branch: main
+      branch: qa
+      codeReview: true
+      codeQuality: true
       services:
         rid_1:
           type: WEB_SERVICE
