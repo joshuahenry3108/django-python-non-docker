@@ -11,6 +11,7 @@ revolte:
       codeStyle:
         rules:
           abstractClassInstantiated: 'on'
+          accessMemberBeforeDefinition: 'on'
   env:
     staging:
       branch: qa
@@ -76,6 +77,8 @@ revolte:
             engine: postgres
     production:
       branch: main
+      codeReview: false
+      codeQuality: false
       services:
         rid_1:
           type: WEB_SERVICE
@@ -108,6 +111,8 @@ revolte:
             storage: 30
             engine: postgres
     preview:
+      codeReview: false
+      codeQuality: false
       services:
         rid_1:
           type: WEB_SERVICE
