@@ -1,7 +1,7 @@
 revolte:
   version: '1.0'
-  project: Warehouse
-  appName: ware-py-app
+  project: Project One
+  appName: django-non-docker
   env:
     staging:
       branch: main
@@ -67,14 +67,14 @@ revolte:
         rid_1:
           type: WEB_SERVICE
           name: web_service
-          entryPoint: index.js
+          entryPoint: wsgi.py
           properties:
             health: /health
             port: 8080
             variables:
               BASE_URL: /api/v1
-              DATABASE_URL: '#{db.dbUrl}'
-              DATABASE_PORT: '#{db.dbPort}'
+              DATABASE_HOST: '#{db.dbUrl}'
+              DB_PORT: '#{db.dbPort}'
               DATABASE_USERNAME: '#{db.dbUsername}'
               DATABASE_PASSWORD: '#{db.dbPassword}'
               DATABASE_NAME: '#{db.dbName}'
