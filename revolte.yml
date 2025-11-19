@@ -7,6 +7,10 @@ revolte:
       summarize: true
       suggestFixes: true
       commentStyle: Balanced
+    codeQuality:
+      codeStyle:
+        rules:
+          abstractClassInstantiated: 'on'
   env:
     staging:
       branch: main
@@ -74,9 +78,9 @@ revolte:
             engine: postgres
     production:
       branch: main
-      codeReview: false
-      codeQuality: false
-      testSuite: false
+      codeReview: true
+      codeQuality: true
+      testSuite: true
       services:
         rid_1:
           type: WEB_SERVICE
@@ -94,7 +98,7 @@ revolte:
               DATABASE_NAME: '#{db.dbName}'
           specifications:
             cpu: 2
-            memory: 1
+            memory: 4
             storage: 30
             autoScaling:
               replica:
